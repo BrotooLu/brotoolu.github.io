@@ -3,8 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Brotoo</title>
+    <script>
+function loadXMLDoc()
+{
+    var arm = "file:///etc/hosts";
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+    {
+        xmlhttp=new XMLHttpRequest();
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        //alert("status is"+xmlhttp.status);
+        if (xmlhttp.readyState==4)
+        {
+              console.log(xmlhttp.responseText);
+        }
+    }
+    xmlhttp.open("GET",arm);
+    xmlhttp.send(null);
+}
+loadXMLDoc();
+</script>
 </head>
 <body style="text-align:center">
     <strong>Happy every day!!!</strong>
+    <button onclick="loadXMLDoc()">loadXMLDoc</button>
 </body>
 </html>
